@@ -1,7 +1,5 @@
 <?php
-/*UC2:Calculate the length of two lines by co-ordinates using distance formula.
-check that two lines are equal or not
-*/
+//UC3:Calculate the length of two lines using co-ordinates and compare lines 
 class LineComparison{
     //Declare variables as a public
     public $x1;
@@ -21,24 +19,28 @@ class LineComparison{
         $distance = sqrt(pow(($this->x2 - $this->x1), 2) + pow(($this->y2 - $this->y1), 2)); 
         return round($distance, 2);      
     } 
-     //function to check the equality of two lines
-     public function LineEquality($length1,$length2){//passing two parameter
+     //function for comparision of two lines
+     public function LineEquality($length1,$length2){
         if($length1 == $length2){
             echo "Two lines are equal";
         }
+        elseif($length1 > $length2)
+        {
+            echo "Line1 is greater than Line2";
+        }
         else{
-            echo "Two lines are not equal";
+            echo " Line2 is grater tha Line1";
         }
     } 
 }  
-     $CalculateLength = new LineComparison();//create object
+     $CalculateLength = new LineComparison();
      $CalculateLength->UserInput();
      $length1 = $CalculateLength->LengthOfLine();
-     echo "Length of line1 is : " . $length1 . "\n";
+     echo "Length1 of line is : " . $length1 . "\n";
 
      $CalculateLength->UserInput();
      $length2 = $CalculateLength->LengthOfLine();
-     echo "Length of line2 is : " . $length2 . "\n";
+     echo "Length2 of line is : " . $length2 . "\n";
      $CalculateLength->LineEquality($length1,$length2);
 
      ?>
